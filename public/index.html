@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Worm AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script src="particles.js"></script>
+
+<div class="app">
+  <header class="top">
+    <div class="logo">🪱 WORM AI</div>
+    <select id="model">
+      <option value="claude">Claude</option>
+      <option value="deepseek">DeepSeek</option>
+      <option value="grok">Grok</option>
+    </select>
+  </header>
+
+  <section class="system-box">
+    <select id="systemMode">
+      <option value="default">Default System (Worm AI)</option>
+      <option value="custom">Custom System Prompt</option>
+    </select>
+    <textarea id="systemPrompt" disabled placeholder="Isi system prompt lu sendiri..."></textarea>
+  </section>
+
+  <div class="session-btn">
+    <button id="newChat">➕ New Chat</button>
+    <button id="clearChat">🗑️ Clear Session</button>
+  </div>
+
+  <main id="chat" class="chat">
+    <div class="bubble ai">Halo 👋 gw Worm AI.</div>
+  </main>
+
+  <div id="dropzone" class="dropzone">📷 Drag & drop image</div>
+
+  <footer class="input-box">
+    <input id="input" placeholder="Ketik pesan..." />
+    <button id="send">➤</button>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
