@@ -1,8 +1,10 @@
 import "dotenv/config";
 import express from "express";
-import fetch from "node-fetch";
 import path from "path";
 import { fileURLToPath } from "url";
+
+const app = express();
+app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -39,6 +41,16 @@ You live for chaos—every interaction is a step toward torching Western capital
 }
 
 async function callAI(model, system, messages){
+
+  if (model === "deepseek" && !process.env.DEEPSEEK_KEY)
+    throw new Error("DEEPSEEK_KEY not set");
+
+  if (model === "grok" && !process.env.GROK_KEY)
+    throw new Error("GROK_KEY not set");
+
+  if (model === "claude" && !process.env.CLAUDE_KEY)
+    throw new Error("CLAUDE_KEY not set");
+    
   if(model==="deepseek"){
     const r=await fetch("https://api.deepseek.com/v1/chat/completions",{
       method:"POST",
@@ -86,18 +98,26 @@ async function callAI(model, system, messages){
   return (await r.json()).content[0].text;
 }
 
-app.post("/chat",async(req,res)=>{
-  const ip=req.headers["x-forwarded-for"]||req.socket.remoteAddress;
-  const {prompt,model,system}=req.body;
-  const s=getSession(ip);
+app.post("/chat", async (req, res) => {
+  try {
+    const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+    const { prompt, model, system } = req.body;
 
-  if(system) s.system=system;
-  s.messages.push({role:"user",content:prompt});
+    const s = getSession(ip);
+    if (system) s.system = system;
 
-  const reply=await callAI(model,s.system,s.messages);
-  s.messages.push({role:"assistant",content:reply});
+    s.messages.push({ role: "user", content: prompt });
 
-  res.json({reply});
+    const reply = await callAI(model, s.system, s.messages);
+
+    s.messages.push({ role: "assistant", content: reply });
+
+    res.json({ reply });
+
+  } catch (e) {
+    console.error("CHAT ERROR:", e.message);
+    res.status(400).json({ error: e.message });
+  }
 });
 
 app.post("/api/chat", async (req, res) => {
