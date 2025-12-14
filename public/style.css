@@ -114,3 +114,14 @@ button {
   border-radius:12px;
   background:linear-gradient(135deg,#00eaff,#7f00ff);
 }
+
+.apikey-box {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.apikey-box input {
+  flex: 1;
+  padding: 6px;
+}
