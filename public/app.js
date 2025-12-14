@@ -26,22 +26,31 @@ function bubble(text, cls) {
 }
 
 send.onclick = async () => {
-  if (!input.value) return;
-  bubble(input.value,"user");
+  const text = input.value.trim();
+  if (!text) return;
 
-  const r = await fetch("/chat",{
-    method:"POST",
-    headers:{ "Content-Type":"application/json" },
-    body:JSON.stringify({
-      prompt: input.value,
-      model: model.value,
-      system: systemMode.value==="custom" ? systemPrompt.value : null
+  const model = document.getElementById("model").value;
+  const apiKey = getUserApiKey(model);
+
+  if (!apiKey) {
+    alert(
+      "API key belum diisi owner.\n" +
+      "Silakan isi API key Anda sendiri atau coba model lain."
+    );
+    return;
+  }
+
+  await fetch("/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model,
+      apiKey,
+      message: text
     })
   });
 
-  const j = await r.json();
-  bubble(j.reply,"ai");
-  input.value="";
+  input.value = "";
 };
 
 newChat.onclick = () => {
