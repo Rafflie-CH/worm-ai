@@ -27,6 +27,22 @@
   </header>
 
   <section class="system-box">
+    <section class="apikey-box">
+  <select id="apiModel">
+    <option value="claude">Claude</option>
+    <option value="deepseek">DeepSeek</option>
+    <option value="grok">Grok</option>
+  </select>
+
+  <input
+    id="apiKeyInput"
+    type="password"
+    placeholder="Masukkan API key model ini..."
+  />
+
+  <button id="saveKey">💾 Save API Key</button>
+    </section>
+    
     <select id="systemMode">
       <option value="default">Default System (Worm AI)</option>
       <option value="custom">Custom System Prompt</option>
