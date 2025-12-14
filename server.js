@@ -100,6 +100,20 @@ app.post("/chat",async(req,res)=>{
   res.json({reply});
 });
 
+app.post("/api/chat", async (req, res) => {
+  const { model, apiKey, message } = req.body;
+
+  if (!apiKey) {
+    return res.status(400).json({
+      error:
+        "The API key is not filled in by the owner. Please fill in your own API key or try another model."
+    });
+  }
+  res.json({
+    reply: `Model ${model} API key received`
+  });
+});
+
 app.post("/session/clear",(req,res)=>{
   const ip=req.headers["x-forwarded-for"]||req.socket.remoteAddress;
   sessions.delete(ip);
