@@ -1,43 +1,42 @@
 # 🪱 Worm AI
 
+🌐 **Language**
+- 🇺🇸 English (this page)
+- 🇮🇩 [Bahasa Indonesia](README_ID.md)
+
 > **Multi-Model AI Chat Web**  
 > Claude • DeepSeek • Grok  
 > Liquid Glass UI • Neon Blue • Beginner Friendly
 
 ---
 
-## 🌐 Language
-- 🇺🇸 **English (this page)**
-- 🇮🇩 [Bahasa Indonesia](#bahasa-indonesia)
-
----
-
 ## ✨ What is Worm AI?
 
-**Worm AI** is a modern **AI chat website** similar to ChatGPT, but with the ability to **switch between multiple AI models**.
+**Worm AI** is a modern **AI chat website** similar to ChatGPT,  
+but with the ability to **switch between multiple AI models**.
 
-It is designed to be:
-- ✅ Easy for beginners
+This project is designed to be:
+- ✅ Beginner friendly
 - ✅ Easy to upload (ZIP → GitHub)
 - ✅ Easy to deploy (Vercel)
 - ✅ Easy to customize
 
-You **do NOT need to understand coding** to use or deploy this project.
+You **do NOT need coding knowledge** to use or deploy this project.
 
 ---
 
 ## 🧠 AI Features
 
-- 🔁 Multi-model AI support:
-  - **Claude** (Anthropic)
-  - **DeepSeek**
-  - **Grok** (xAI)
+- 🔁 **Multi-model AI**
+  - Claude (Anthropic)
+  - DeepSeek
+  - Grok (xAI)
 - 🔄 Switch AI model anytime
 - 🧩 **System Prompt Training**
   - Default system prompt (Worm AI)
-  - Custom system prompt (user input)
+  - Custom system prompt (user-defined)
 - 💾 Session per user (IP-based)
-- 🆕 New chat
+- 🆕 Start new chat
 - 🗑️ Clear AI memory
 - ⌨️ AI replies with **word-by-word typing effect**
 
@@ -45,7 +44,7 @@ You **do NOT need to understand coding** to use or deploy this project.
 
 ## 🎨 UI / UX Features
 
-- ChatGPT-style interface
+- ChatGPT-style chat interface
 - Semi **liquid glass** (iOS-like)
 - Dark mode
 - Blue-dominant neon theme
@@ -63,7 +62,7 @@ worm-ai/ ├─ public/ │  ├─ index.html      # Main UI │  ├─ style.
 
 ---
 
-## 📦 What You Need (Before Start)
+## 📦 What You Need
 
 You only need:
 1. A **GitHub account**
@@ -71,28 +70,28 @@ You only need:
 3. This project **ZIP file**
 4. AI **API keys**
 
-No local setup required.
+No local coding setup required.
 
 ---
 
-## 🚀 STEP 1 — Upload ZIP to GitHub (NO CODING)
+## 🚀 STEP 1 — Upload ZIP to GitHub (No Coding)
 
-### 🔹 1. Open Google Colab
+### 1️⃣ Open Google Colab  
 👉 https://colab.research.google.com
 
-### 🔹 2. Upload the ZIP file
-Upload:
+### 2️⃣ Upload the ZIP file  
+Example:
 
 worm-ai.zip
 
-### 🔹 3. Create GitHub Token
-1. Open: https://github.com/settings/tokens
+### 3️⃣ Create GitHub Token
+1. Go to https://github.com/settings/tokens  
 2. Click **Generate new token (classic)**
 3. Check:
    - ✅ repo
 4. Copy the token
 
-### 🔹 4. Run this code ONCE in Colab
+### 4️⃣ Run this code ONCE in Colab
 
 ```bash
 %%bash
@@ -118,52 +117,42 @@ git add .
 git commit -m "Initial Worm AI upload"
 git push -u origin main --force
 
-✅ Done.
-Your ZIP is now uploaded to GitHub.
+```
 
-
+✅ Done. Your project is now on GitHub.
 ---
 
-🔐 STEP 2 — Get AI API Keys (OFFICIAL)
+🔐 STEP 2 — Get AI API Keys (Official)
 
 🤖 Claude (Anthropic)
 
 👉 https://console.anthropic.com
-Create API Key → copy
 
 CLAUDE_KEY=sk-ant-xxxx
-
-
----
 
 🧠 DeepSeek
 
 👉 https://platform.deepseek.com
-Create API Key → copy
 
 DEEPSEEK_KEY=sk-xxxx
-
-
----
 
 🛰️ Grok (xAI)
 
 👉 https://console.x.ai
-Create API Key → copy
 
 GROK_KEY=xai-xxxx
 
-⚠️ Never put API keys in frontend code.
+⚠️ Never expose API keys in frontend code.
 
 
 ---
 
-⚙️ STEP 3 — Set API Keys in Vercel
+⚙️ STEP 3 — Deploy to Vercel
 
 1. Open https://vercel.com
 
 
-2. Import your GitHub repo
+2. Import your GitHub repository
 
 
 3. Go to Settings → Environment Variables
@@ -179,7 +168,7 @@ GROK_KEY
 
 
 
-5. Deploy 🚀
+5. Click Deploy
 
 
 
@@ -200,119 +189,23 @@ This controls how the AI behaves by default.
 
 ---
 
-🧪 How Sessions Work
-
-Each user has their own AI session
-
-Session is based on IP
-
-User can:
-
-Start a new chat
-
-Clear AI memory
-
-
-
-
----
-
 📜 License
 
 MIT License
-Free to learn, modify, and use.
+Free to learn, use, and modify.
 
 
 ---
 
-🇮🇩 Bahasa Indonesia
+🪱 Final Note
 
-❓ Apa itu Worm AI?
+Worm AI is built as a:
 
-Worm AI adalah website chat AI modern yang bisa memakai banyak AI sekaligus (Claude, DeepSeek, Grok) dengan tampilan futuristik dan mudah digunakan.
+Learning playground
 
-Project ini dibuat supaya:
+Multi-model AI demo
 
-Orang awam bisa langsung pakai
-
-Tidak ribet upload
-
-Mudah deploy ke Vercel
+Real deployable project
 
 
-
----
-
-🧠 Fitur Utama
-
-Multi AI (Claude, DeepSeek, Grok)
-
-Bisa ganti AI kapan saja
-
-System prompt bawaan
-
-System prompt custom
-
-Bisa mulai chat baru
-
-Bisa hapus memori AI
-
-Jawaban AI diketik per kata
-
-
-
----
-
-🚀 Cara Upload ke GitHub (PALING MUDAH)
-
-Yang dibutuhkan:
-
-Akun GitHub
-
-Google Colab
-
-File ZIP project
-
-
-Langkah:
-
-1. Buka Google Colab
-
-
-2. Upload ZIP
-
-
-3. Jalankan 1 kode
-
-
-4. Selesai
-
-
-
-
----
-
-🔐 API Key
-
-Claude → https://console.anthropic.com
-
-DeepSeek → https://platform.deepseek.com
-
-Grok → https://console.x.ai
-
-
-
----
-
-🪱 Penutup
-
-Worm AI adalah project AI multi-model dengan UI modern yang cocok untuk:
-
-Belajar
-
-Eksperimen
-
-Deploy real
-
-
-Silakan gunakan dan kembangkan 🚀
+Feel free to explore and extend it 🚀
