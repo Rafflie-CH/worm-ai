@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <title>Worm AI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- CSS (ABSOLUTE PATH) -->
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-<script src="particles.js"></script>
+<!-- Background animation -->
+<script src="/particles.js"></script>
 
 <div class="app">
   <header class="top">
@@ -26,7 +31,11 @@
       <option value="default">Default System (Worm AI)</option>
       <option value="custom">Custom System Prompt</option>
     </select>
-    <textarea id="systemPrompt" disabled placeholder="Isi system prompt lu sendiri..."></textarea>
+    <textarea
+      id="systemPrompt"
+      disabled
+      placeholder="Isi system prompt lu sendiri..."
+    ></textarea>
   </section>
 
   <div class="session-btn">
@@ -46,6 +55,7 @@
   </footer>
 </div>
 
-<script src="app.js"></script>
+<!-- Main JS (ABSOLUTE PATH) -->
+<script src="/app.js"></script>
 </body>
 </html>
