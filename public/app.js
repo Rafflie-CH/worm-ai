@@ -52,3 +52,34 @@ clearChat.onclick = async () => {
   await fetch("/session/clear",{ method:"POST" });
   chat.innerHTML = `<div class="bubble ai">Sesi AI dihapus 🗑️</div>`;
 };
+
+// ================================
+// API KEY HANDLER (USER SIDE)
+// ================================
+const apiKeyInput = document.getElementById("apiKeyInput");
+const apiModel = document.getElementById("apiModel");
+const saveKeyBtn = document.getElementById("saveKey");
+
+// load api key saat ganti model
+apiModel.addEventListener("change", () => {
+  apiKeyInput.value =
+    localStorage.getItem("key_" + apiModel.value) || "";
+});
+
+// simpan api key
+saveKeyBtn.addEventListener("click", () => {
+  const key = apiKeyInput.value.trim();
+  if (!key) {
+    alert("API key masih kosong.");
+    return;
+  }
+  localStorage.setItem("key_" + apiModel.value, key);
+  alert("API key disimpan di browser lu.");
+});
+
+// load pertama kali
+apiModel.dispatchEvent(new Event("change"));
+
+function getUserApiKey(model) {
+  return localStorage.getItem("key_" + model);
+}
