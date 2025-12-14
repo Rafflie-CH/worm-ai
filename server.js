@@ -120,5 +120,4 @@ app.post("/session/clear",(req,res)=>{
   res.json({ok:true});
 });
 
-app.listen(3000);
 export default app;
